@@ -48,43 +48,49 @@
             </div>
 
             <!-- Formulario entrar -->
-            <form action="" class="form form-entrar">
+            <form action="" class="form form-entrar" id="formEntrar">
                <div class="campo">
                   <label class="form-label">E-mail</label>
-                  <input type="email" class="form-control" maxlength="255" required>
+                  <input type="email" class="form-control" id="emailLogin" maxlength="255" required>
                </div>
 
                <div class="campo">
                   <label class="form-label">Senha</label>
-                  <input type="password" class="form-control" required>
+                  <div class="senha-container">
+                     <input type="password" class="form-control campo-senha" id="senhaLogin" required>
+                     <button type="button" class="toggle-senha" data-target="senhaLogin">Ver</button>
+                  </div>
                </div>
 
-               <button type="button" class="confirmar">Entrar</button>
+               <button type="submit" class="confirmar">Entrar</button>
             </form>
 
             <!-- Formulario cadastrar -->
-            <form action="" class="form form-cadastrar">
+            <form action="" class="form form-cadastrar" id="formCadastrar">
                <div class="campo">
                   <label class="form-label">Nome completo</label>
-                  <input type="text" class="form-control" maxlength="120" required>
+                  <input type="text" class="form-control" id="nomeCadastro" maxlength="120" required>
                </div>
 
                <div class="campo">
                   <label class="form-label">OAB (opcional)</label>
-                  <input type="text" class="form-control" maxlength="20" placeholder="SP 123.456">
+                  <input type="text" class="form-control" id="oabCadastro" maxlength="20" placeholder="SP 123.456">
                </div>
 
                <div class="campo">
                   <label class="form-label">E-mail</label>
-                  <input type="email" class="form-control" maxlength="255" required>
+                  <input type="email" class="form-control" id="emailCadastro" maxlength="255" required>
                </div>
 
                <div class="campo">
                   <label class="form-label">Senha</label>
-                  <input type="password" class="form-control" minlength="8" required>
+                  <div class="senha-container">
+                     <input type="password" class="form-control campo-senha" id="senhaCadastro" minlength="8" required>
+                     <button type="button" class="toggle-senha" data-target="senhaCadastro">Ver</button>
+                  </div>
                </div>
 
-               <button type="button" class="confirmar">Criar conta</button>
+               <button type="submit" class="confirmar">Criar conta</button>
             </form>
 
             <!-- Divisor -->
@@ -95,7 +101,7 @@
             </div>
 
             <!-- Botao Google -->
-            <button type="button" class="botao-google">
+            <button type="button" class="botao-google" id="botaoGoogle">
                <svg class="icone-google" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
                   <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
@@ -111,6 +117,7 @@
    </main>
    <!-- Fim do codigo do login -->
 
+   <script src="../JS/login.js"></script>
 </body>
 
 </html>

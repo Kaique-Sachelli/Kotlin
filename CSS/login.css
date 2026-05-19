@@ -163,6 +163,30 @@ h3 {
   transition: all 0.2s ease-in-out;
 }
 
+.senha-container {
+  position: relative;
+}
+
+.senha-container .form-control {
+  padding-right: 48px;
+}
+
+.toggle-senha {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: var(--texto-suave);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.toggle-senha:hover {
+  color: var(--dourado);
+}
+
 .confirmar {
   width: 100%;
   min-height: 44px;
@@ -274,6 +298,10 @@ h3 {
 
 #notificacao.erro {
   background-color: #BA1A1A;
+}
+
+#notificacao.info {
+  background-color: var(--azul);
 }
 /* Fim do codigo da notificacao */
 

@@ -35,13 +35,13 @@
                <a href="#inicio" class="ativo">In&iacute;cio</a>
                <a href="#calculadora">Calculadora</a>
                <a href="#historico">Meus C&aacute;lculos</a>
-               <a href="#documentacao">Documenta&ccedil;&atilde;o</a>
+               <a href="../Docs/ManualCalculoVEC.pdf" target="_blank">Documenta&ccedil;&atilde;o</a>
             </nav>
          </div>
 
          <!-- Botao login -->
          <div class="col-lg-3 col-md-3 d-flex justify-content-end">
-            <a href="login.html" class="botao-entrar">Entrar</a>
+            <a href="login.html" class="botao-entrar" id="botaoAutenticacao">Entrar</a>
          </div>
       </div>
    </header>
@@ -83,7 +83,7 @@
                   <div class="icone-indicador">&#9633;</div>
                   <div>
                      <p>Total de Execu&ccedil;&otilde;es</p>
-                     <h2>24</h2>
+                     <h2 id="totalExecucoes">0</h2>
                   </div>
                </div>
             </div>
@@ -93,7 +93,7 @@
                   <div class="icone-indicador dourado">+</div>
                   <div>
                      <p>Progress&otilde;es Pendentes</p>
-                     <h2>08</h2>
+                     <h2 id="totalPendentes">0</h2>
                   </div>
                </div>
             </div>
@@ -103,7 +103,7 @@
                   <div class="icone-indicador">&#8801;</div>
                   <div>
                      <p>C&aacute;lculos Recentes</p>
-                     <h2>05</h2>
+                     <h2 id="totalRecentes">0</h2>
                   </div>
                </div>
             </div>
@@ -123,64 +123,117 @@
                      <h1>Calculadora de Pena</h1>
                   </div>
 
-                  <form action="" class="form">
+                  <form action="" class="form" id="formCalculo">
                      <div class="row">
                         <div class="col-md-12">
                            <label class="form-label">Cliente:</label>
-                           <input type="text" class="form-control" placeholder="Nome do cliente">
+                           <input type="text" class="form-control" id="cliente" placeholder="Nome do cliente" required>
                         </div>
 
                         <div class="col-md-12">
                            <label class="form-label">N&uacute;mero do processo:</label>
-                           <input type="text" class="form-control" placeholder="0000000-00.0000.0.00.0000">
+                           <input type="text" class="form-control" id="processo" placeholder="0000000-00.0000.0.00.0000">
                         </div>
 
-                        <div class="col-md-12">
-                           <label class="form-label">Data da pris&atilde;o:</label>
-                           <input type="date" class="form-control">
+                        <div class="col-md-6">
+                           <label class="form-label">Data de in&iacute;cio da pena:</label>
+                           <input type="date" class="form-control" id="dataPrisao" required>
+                        </div>
+
+                        <div class="col-md-6">
+                           <label class="form-label">Regime inicial:</label>
+                           <select class="form-select" id="regimeInicial">
+                              <option value="FECHADO">Fechado</option>
+                              <option value="SEMIABERTO">Semiaberto</option>
+                              <option value="ABERTO">Aberto</option>
+                           </select>
                         </div>
 
                         <div class="col-md-3 col-6">
                            <label class="form-label">Anos:</label>
-                           <input type="number" class="form-control" value="0">
+                           <input type="number" class="form-control" id="anos" value="0" min="0" max="150">
                         </div>
 
                         <div class="col-md-3 col-6">
                            <label class="form-label">Meses:</label>
-                           <input type="number" class="form-control" value="0">
+                           <input type="number" class="form-control" id="meses" value="0" min="0" max="11">
                         </div>
 
                         <div class="col-md-3 col-6">
                            <label class="form-label">Dias:</label>
-                           <input type="number" class="form-control" value="0">
+                           <input type="number" class="form-control" id="dias" value="0" min="0" max="30">
                         </div>
 
                         <div class="col-md-3 col-6">
-                           <label class="form-label">Faltas graves:</label>
-                           <input type="number" class="form-control" value="0">
+                           <label class="form-label">Detra&ccedil;&atilde;o:</label>
+                           <input type="number" class="form-control" id="detracao" value="0" min="0">
                         </div>
 
                         <div class="col-md-12">
                            <label class="form-label">Tipo de crime / situa&ccedil;&atilde;o:</label>
-                           <select class="form-select">
-                              <option>Comum prim&aacute;rio</option>
-                              <option>Comum reincidente</option>
-                              <option>Hediondo prim&aacute;rio</option>
-                              <option>Hediondo reincidente</option>
-                              <option>Organiza&ccedil;&atilde;o criminosa</option>
+                           <select class="form-select" id="tipoCrime">
+                              <option value="comum_primario">Comum - prim&aacute;rio</option>
+                              <option value="comum_reincidente">Comum - reincidente</option>
+                              <option value="violencia_primario">Viol&ecirc;ncia ou grave amea&ccedil;a - prim&aacute;rio</option>
+                              <option value="violencia_reincidente">Viol&ecirc;ncia ou grave amea&ccedil;a - reincidente</option>
+                              <option value="hediondo_primario">Hediondo/equiparado - prim&aacute;rio</option>
+                              <option value="hediondo_reincidente">Hediondo/equiparado - reincidente</option>
+                              <option value="hediondo_morte_primario">Hediondo com resultado morte - prim&aacute;rio</option>
+                              <option value="hediondo_morte_reincidente">Hediondo com resultado morte - reincidente</option>
+                              <option value="organizacao_criminosa">Comando de organiza&ccedil;&atilde;o criminosa</option>
                            </select>
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                           <label class="form-label">Dias trabalhados:</label>
+                           <input type="number" class="form-control" id="diasTrabalho" value="0" min="0">
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                           <label class="form-label">Horas de estudo:</label>
+                           <input type="number" class="form-control" id="horasEstudo" value="0" min="0">
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                           <label class="form-label">Livros lidos:</label>
+                           <input type="number" class="form-control" id="livros" value="0" min="0">
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                           <label class="form-label">Remi&ccedil;&atilde;o extra:</label>
+                           <input type="number" class="form-control" id="remicaoExtra" value="0" min="0">
+                        </div>
+
+                        <div class="col-md-4">
+                           <label class="form-label">Faltas graves:</label>
+                           <input type="number" class="form-control" id="faltasGraves" value="0" min="0">
+                        </div>
+
+                        <div class="col-md-8">
+                           <label class="form-label">WhatsApp para contato:</label>
+                           <input type="text" class="form-control" id="whatsapp" placeholder="(11) 99999-9999">
+                        </div>
+
+                        <div class="col-md-6">
+                           <label class="form-label">Nome para contato:</label>
+                           <input type="text" class="form-control" id="nomeContato" placeholder="Nome completo">
+                        </div>
+
+                        <div class="col-md-6">
+                           <label class="form-label">E-mail para contato:</label>
+                           <input type="email" class="form-control" id="emailContato" placeholder="email@exemplo.com">
                         </div>
 
                         <div class="col-md-12">
                            <label class="form-label">Observa&ccedil;&otilde;es:</label>
-                           <textarea class="form-control" rows="3" placeholder="Inclua dados importantes do processo"></textarea>
+                           <textarea class="form-control" id="observacoes" rows="3" placeholder="Inclua dados importantes do processo"></textarea>
                         </div>
                      </div>
 
                      <div class="botoes-formulario">
-                        <button class="confirmar" type="button">Calcular</button>
-                        <button class="botao-alternativo" type="button">Salvar</button>
-                        <button class="botao-alternativo" type="button">Exportar PDF</button>
+                        <button class="confirmar" type="submit" id="botaoCalcular">Calcular</button>
+                        <button class="botao-alternativo" type="button" id="botaoSalvar">Salvar</button>
+                        <button class="botao-alternativo" type="button" id="botaoExportar">Exportar PDF</button>
                      </div>
                   </form>
                </div>
@@ -189,29 +242,39 @@
             <div class="col-lg-5">
                <div class="container-resultado">
                   <h1>Resultado</h1>
-                  <p>Preencha os dados e clique em <strong>Calcular</strong> para visualizar os marcos.</p>
+                  <p id="resultadoIntro">Preencha os dados e clique em <strong>Calcular</strong> para visualizar os marcos.</p>
 
-                  <div class="resultado-linha">
-                     <span>Progress&atilde;o de Regime</span>
-                     <strong>12 de agosto de 2028</strong>
-                     <p>Percentual aplic&aacute;vel &middot; 1.280 dias a cumprir</p>
+                  <div id="resultadoConteudo" class="resultado-conteudo vazio">
+                     <div class="resultado-linha">
+                        <span>Progress&atilde;o de Regime</span>
+                        <strong id="resultadoSemiaberto">--</strong>
+                        <p id="resultadoSemiabertoDias">-- dias a cumprir</p>
+                     </div>
+
+                     <div class="resultado-linha">
+                        <span>Progress&atilde;o ao Aberto</span>
+                        <strong id="resultadoAberto">--</strong>
+                        <p id="resultadoAbertoDias">-- dias a cumprir</p>
+                     </div>
+
+                     <div class="resultado-linha">
+                        <span>Livramento Condicional</span>
+                        <strong id="resultadoLivramento">--</strong>
+                        <p id="resultadoLivramentoDias">-- dias a cumprir</p>
+                     </div>
+
+                     <div class="resultado-linha destaque">
+                        <span>T&eacute;rmino da Pena</span>
+                        <strong id="resultadoTermino">--</strong>
+                        <p id="resultadoResumo">Pena total: --</p>
+                     </div>
+
+                     <ul class="lista-avisos" id="listaAvisos"></ul>
+
+                     <a href="https://api.whatsapp.com/send/?phone=5511989498044&text=Ol%C3%A1%2C+preciso+de+ajuda+com+um+c%C3%A1lculo+penal&type=phone_number&app_absent=0" target="_blank" class="botao-principal botao-whatsapp">
+                        Quero Falar com um Advogado
+                     </a>
                   </div>
-
-                  <div class="resultado-linha">
-                     <span>Livramento Condicional</span>
-                     <strong>25 de janeiro de 2030</strong>
-                     <p>Marco estimado &middot; 1.811 dias a cumprir</p>
-                  </div>
-
-                  <div class="resultado-linha destaque">
-                     <span>T&eacute;rmino da Pena</span>
-                     <strong>04 de novembro de 2032</strong>
-                     <p>Cumprimento integral &middot; 2.826 dias a cumprir</p>
-                  </div>
-
-                  <p class="aviso">
-                     * C&aacute;lculo orientativo. Revise sempre as datas exatas dos eventos processuais.
-                  </p>
                </div>
             </div>
          </div>
@@ -227,31 +290,11 @@
                <div class="container-historico">
                   <div class="titulo-secao">
                      <h1>C&aacute;lculos Recentes</h1>
-                     <a href="#historico">Ver todos</a>
+                     <button type="button" id="botaoAtualizarHistorico">Atualizar</button>
                   </div>
 
-                  <div class="linha-historico">
-                     <div>
-                        <strong>Maria Oliveira</strong>
-                        <p>Processo 0001423-21.2024.8.26.0001 &middot; 8a 4m 12d</p>
-                     </div>
-                     <button>Abrir</button>
-                  </div>
-
-                  <div class="linha-historico">
-                     <div>
-                        <strong>Jo&atilde;o Santos</strong>
-                        <p>Processo 0005598-10.2023.8.26.0002 &middot; 5a 2m 20d</p>
-                     </div>
-                     <button>Abrir</button>
-                  </div>
-
-                  <div class="linha-historico">
-                     <div>
-                        <strong>Ana Ribeiro</strong>
-                        <p>Processo 0008741-19.2022.8.26.0003 &middot; 12a 0m 0d</p>
-                     </div>
-                     <button>Abrir</button>
+                  <div id="listaHistorico">
+                     <p class="mensagem-historico">Fa&ccedil;a login para visualizar seus c&aacute;lculos salvos.</p>
                   </div>
                </div>
             </div>
@@ -263,7 +306,7 @@
                   <p>
                      Consulte o material oficial sobre execu&ccedil;&atilde;o penal e c&aacute;lculos de pena corporal.
                   </p>
-                  <a href="#documentacao" class="botao-principal">Acessar documenta&ccedil;&atilde;o</a>
+                  <a href="../Docs/ManualCalculoVEC.pdf" target="_blank" class="botao-principal">Acessar documenta&ccedil;&atilde;o</a>
                </div>
             </div>
          </div>
@@ -280,7 +323,7 @@
       <span class="linha-dourada"></span>
    </footer>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="../JS/inicio.js"></script>
 </body>
 
 </html>

@@ -402,6 +402,26 @@ h3 {
   border: 1px solid rgba(198, 148, 82, 0.36);
 }
 
+.resultado-conteudo.vazio {
+  opacity: 0.72;
+}
+
+.lista-avisos {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  color: rgba(251, 250, 247, 0.72);
+  font-size: 12px;
+}
+
+.lista-avisos li {
+  margin-bottom: 6px;
+}
+
+.botao-whatsapp {
+  width: 100%;
+  margin-top: 18px;
+}
+
 .aviso {
   font-size: 12px;
   font-style: italic;
@@ -436,6 +456,19 @@ h3 {
   font-weight: 700;
 }
 
+.titulo-secao button {
+  background-color: white;
+  color: var(--azul);
+  border: 1px solid rgba(198, 148, 82, 0.45);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 700;
+}
+
+.titulo-secao button:hover {
+  background-color: #f7f1e8;
+}
+
 .linha-historico {
   display: flex;
   align-items: center;
@@ -466,6 +499,11 @@ h3 {
 
 .linha-historico button:hover {
   background-color: #f7f1e8;
+}
+
+.mensagem-historico {
+  color: var(--texto-suave);
+  margin: 18px 0 0;
 }
 /* Fim do codigo do historico */
 
@@ -546,6 +584,10 @@ footer .texto-footer {
 
 #notificacao.erro {
   background-color: #BA1A1A;
+}
+
+#notificacao.info {
+  background-color: var(--azul);
 }
 /* Fim do codigo da notificacao */
 
