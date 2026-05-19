@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Calculo Penal de Precisao</title>
+   <link rel="stylesheet" href="../CSS/inicio.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <!-- Fonte Playfair Display + Inter -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <div id="notificacao">notificacao</div>
+
+   <!-- Comeco do codigo do cabecalho -->
+   <header class="cabecalho container-fluid">
+      <div class="row d-flex align-items-center justify-content-between">
+
+         <!-- Logo -->
+         <div class="col-lg-3 col-md-4">
+            <a href="#inicio" class="marca">
+               <img src="../Img/logo-branca.png" alt="Logo Cespeds e Lourenco" class="img-fluid logo-advocacia">
+            </a>
+         </div>
+
+         <!-- Menu -->
+         <div class="col-lg-6 col-md-5">
+            <nav class="menu">
+               <a href="#inicio" class="ativo">In&iacute;cio</a>
+               <a href="#calculadora">Calculadora</a>
+               <a href="#historico">Meus C&aacute;lculos</a>
+               <a href="#documentacao">Documenta&ccedil;&atilde;o</a>
+            </nav>
+         </div>
+
+         <!-- Botao login -->
+         <div class="col-lg-3 col-md-3 d-flex justify-content-end">
+            <a href="login.html" class="botao-entrar">Entrar</a>
+         </div>
+      </div>
+   </header>
+   <!-- Fim do codigo do cabecalho -->
+
+   <!-- Comeco do codigo do inicio -->
+   <section id="inicio" class="container-principal">
+      <div class="container">
+         <div class="row d-flex justify-content-center">
+            <div class="texto col-lg-8 col-md-10 text-center">
+               <div class="simbolo-titulo">
+                  <span class="linha-dourada"></span>
+                  <span class="balanca">&#9878;</span>
+                  <span class="linha-dourada"></span>
+               </div>
+
+               <h1 class="titulo">C&aacute;lculo Penal de Precis&atilde;o</h1>
+               <p>
+                  Determine progress&otilde;es de regime, livramento condicional e t&eacute;rmino de pena com
+                  rigor jur&iacute;dico conforme a LEP e o Pacote Anticrime.
+               </p>
+
+               <div class="botoes-inicio">
+                  <a href="#calculadora" class="botao-principal">Novo C&aacute;lculo</a>
+                  <a href="#historico" class="botao-secundario">Meus C&aacute;lculos</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Fim do codigo do inicio -->
+
+   <!-- Comeco do codigo dos indicadores -->
+   <section class="indicadores">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4">
+               <div class="cartao-indicador">
+                  <div class="icone-indicador">&#9633;</div>
+                  <div>
+                     <p>Total de Execu&ccedil;&otilde;es</p>
+                     <h2>24</h2>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-4">
+               <div class="cartao-indicador">
+                  <div class="icone-indicador dourado">+</div>
+                  <div>
+                     <p>Progress&otilde;es Pendentes</p>
+                     <h2>08</h2>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-4">
+               <div class="cartao-indicador">
+                  <div class="icone-indicador">&#8801;</div>
+                  <div>
+                     <p>C&aacute;lculos Recentes</p>
+                     <h2>05</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Fim do codigo dos indicadores -->
+
+   <!-- Comeco do codigo da calculadora -->
+   <section id="calculadora" class="area-calculadora">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-7">
+               <div class="container-calculadora">
+                  <div class="cabecalho-container">
+                     <span class="linha-curta"></span>
+                     <h1>Calculadora de Pena</h1>
+                  </div>
+
+                  <form action="" class="form">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <label class="form-label">Cliente:</label>
+                           <input type="text" class="form-control" placeholder="Nome do cliente">
+                        </div>
+
+                        <div class="col-md-12">
+                           <label class="form-label">N&uacute;mero do processo:</label>
+                           <input type="text" class="form-control" placeholder="0000000-00.0000.0.00.0000">
+                        </div>
+
+                        <div class="col-md-12">
+                           <label class="form-label">Data da pris&atilde;o:</label>
+                           <input type="date" class="form-control">
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                           <label class="form-label">Anos:</label>
+                           <input type="number" class="form-control" value="0">
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                           <label class="form-label">Meses:</label>
+                           <input type="number" class="form-control" value="0">
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                           <label class="form-label">Dias:</label>
+                           <input type="number" class="form-control" value="0">
+                        </div>
+
+                        <div class="col-md-3 col-6">
+                           <label class="form-label">Faltas graves:</label>
+                           <input type="number" class="form-control" value="0">
+                        </div>
+
+                        <div class="col-md-12">
+                           <label class="form-label">Tipo de crime / situa&ccedil;&atilde;o:</label>
+                           <select class="form-select">
+                              <option>Comum prim&aacute;rio</option>
+                              <option>Comum reincidente</option>
+                              <option>Hediondo prim&aacute;rio</option>
+                              <option>Hediondo reincidente</option>
+                              <option>Organiza&ccedil;&atilde;o criminosa</option>
+                           </select>
+                        </div>
+
+                        <div class="col-md-12">
+                           <label class="form-label">Observa&ccedil;&otilde;es:</label>
+                           <textarea class="form-control" rows="3" placeholder="Inclua dados importantes do processo"></textarea>
+                        </div>
+                     </div>
+
+                     <div class="botoes-formulario">
+                        <button class="confirmar" type="button">Calcular</button>
+                        <button class="botao-alternativo" type="button">Salvar</button>
+                        <button class="botao-alternativo" type="button">Exportar PDF</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+
+            <div class="col-lg-5">
+               <div class="container-resultado">
+                  <h1>Resultado</h1>
+                  <p>Preencha os dados e clique em <strong>Calcular</strong> para visualizar os marcos.</p>
+
+                  <div class="resultado-linha">
+                     <span>Progress&atilde;o de Regime</span>
+                     <strong>12 de agosto de 2028</strong>
+                     <p>Percentual aplic&aacute;vel &middot; 1.280 dias a cumprir</p>
+                  </div>
+
+                  <div class="resultado-linha">
+                     <span>Livramento Condicional</span>
+                     <strong>25 de janeiro de 2030</strong>
+                     <p>Marco estimado &middot; 1.811 dias a cumprir</p>
+                  </div>
+
+                  <div class="resultado-linha destaque">
+                     <span>T&eacute;rmino da Pena</span>
+                     <strong>04 de novembro de 2032</strong>
+                     <p>Cumprimento integral &middot; 2.826 dias a cumprir</p>
+                  </div>
+
+                  <p class="aviso">
+                     * C&aacute;lculo orientativo. Revise sempre as datas exatas dos eventos processuais.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Fim do codigo da calculadora -->
+
+   <!-- Comeco do codigo do historico -->
+   <section id="historico" class="historico">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8">
+               <div class="container-historico">
+                  <div class="titulo-secao">
+                     <h1>C&aacute;lculos Recentes</h1>
+                     <a href="#historico">Ver todos</a>
+                  </div>
+
+                  <div class="linha-historico">
+                     <div>
+                        <strong>Maria Oliveira</strong>
+                        <p>Processo 0001423-21.2024.8.26.0001 &middot; 8a 4m 12d</p>
+                     </div>
+                     <button>Abrir</button>
+                  </div>
+
+                  <div class="linha-historico">
+                     <div>
+                        <strong>Jo&atilde;o Santos</strong>
+                        <p>Processo 0005598-10.2023.8.26.0002 &middot; 5a 2m 20d</p>
+                     </div>
+                     <button>Abrir</button>
+                  </div>
+
+                  <div class="linha-historico">
+                     <div>
+                        <strong>Ana Ribeiro</strong>
+                        <p>Processo 0008741-19.2022.8.26.0003 &middot; 12a 0m 0d</p>
+                     </div>
+                     <button>Abrir</button>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-lg-4">
+               <div class="container-documentacao" id="documentacao">
+                  <span class="icone-livro">&#9636;</span>
+                  <h1>Manual de C&aacute;lculo VEC</h1>
+                  <p>
+                     Consulte o material oficial sobre execu&ccedil;&atilde;o penal e c&aacute;lculos de pena corporal.
+                  </p>
+                  <a href="#documentacao" class="botao-principal">Acessar documenta&ccedil;&atilde;o</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Fim do codigo do historico -->
+
+   <!-- FOOTER -->
+   <footer>
+      <span class="linha-dourada"></span>
+      <div class="texto-footer">
+         Cespeds &amp; Louren&ccedil;o Advogados &middot; Sistema de Gest&atilde;o Penal
+      </div>
+      <span class="linha-dourada"></span>
+   </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

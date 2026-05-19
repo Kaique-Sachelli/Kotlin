@@ -1,0 +1,296 @@
+:root {
+  --azul: #000f50;
+  --azul-escuro: #000a35;
+  --azul-claro: #182b73;
+  --dourado: #c69452;
+  --dourado-claro: #dfbd86;
+  --texto: #1c2332;
+  --texto-suave: #5a6475;
+  --papel: #fbfaf7;
+  --borda: #e5e7eb;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--azul);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+/* Comeco do codigo do login */
+.area-login {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 10, 53, 0.86), rgba(0, 15, 80, 0.92)), url('../Img/fundo.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+.container-login {
+  width: 100%;
+  max-width: 430px;
+}
+
+.topo-login {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.logo-login {
+  width: 235px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.simbolo-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--dourado);
+  margin-bottom: 12px;
+}
+
+.linha-dourada {
+  display: inline-block;
+  width: 58px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+}
+
+.balanca {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.topo-login p {
+  color: rgba(251, 250, 247, 0.72);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin: 0;
+}
+/* Fim do codigo do login */
+
+
+/* Comeco do codigo do card */
+.card-login {
+  background-color: #ffffff;
+  border: 1px solid rgba(198, 148, 82, 0.25);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 10px 40px -10px rgba(0, 15, 80, 0.55);
+}
+
+.card-login input[type="radio"] {
+  display: none;
+}
+
+.abas-login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f1f3f7;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.abas-login label {
+  border-radius: 6px;
+  color: var(--texto-suave);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+#aba-entrar:checked ~ .abas-login label[for="aba-entrar"],
+#aba-cadastrar:checked ~ .abas-login label[for="aba-cadastrar"] {
+  background-color: #ffffff;
+  color: var(--azul);
+  box-shadow: 0 2px 10px rgba(0, 15, 80, 0.12);
+}
+/* Fim do codigo do card */
+
+
+/* Comeco do codigo dos formularios */
+.form {
+  display: none;
+}
+
+#aba-entrar:checked ~ .form-entrar {
+  display: block;
+}
+
+#aba-cadastrar:checked ~ .form-cadastrar {
+  display: block;
+}
+
+.campo {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  color: var(--texto);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  min-height: 44px;
+  border-radius: 6px !important;
+  border-color: var(--borda) !important;
+  color: var(--texto) !important;
+}
+
+.form-control:focus {
+  outline: none !important;
+  border-color: var(--dourado) !important;
+  box-shadow: 0 0 0 3px rgba(198, 148, 82, 0.18) !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.confirmar {
+  width: 100%;
+  min-height: 44px;
+  background-color: var(--azul);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  margin-top: 4px;
+  transition: all 0.25s ease;
+}
+
+.confirmar:hover {
+  background-color: var(--azul-claro);
+}
+/* Fim do codigo dos formularios */
+
+
+/* Comeco do codigo do divisor */
+.divisor-login {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.divisor-login span {
+  height: 1px;
+  background-color: var(--borda);
+  flex: 1;
+}
+
+.divisor-login p {
+  color: var(--texto-suave);
+  font-size: 12px;
+  margin: 0;
+}
+/* Fim do codigo do divisor */
+
+
+/* Comeco do codigo do botao google */
+.botao-google {
+  width: 100%;
+  min-height: 44px;
+  background-color: #ffffff;
+  color: var(--texto);
+  border: 1px solid rgba(198, 148, 82, 0.45);
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.botao-google:hover {
+  background-color: #f7f1e8;
+}
+
+.icone-google {
+  width: 18px;
+  height: 18px;
+}
+
+.voltar {
+  display: block;
+  text-align: center;
+  color: var(--azul);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 18px;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  color: var(--dourado);
+}
+/* Fim do codigo do botao google */
+
+
+/* Comeco do codigo da notificacao */
+#notificacao {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  opacity: 0;
+  transform: translateX(150%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+#notificacao.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#notificacao.sucesso {
+  background-color: #28a745;
+}
+
+#notificacao.erro {
+  background-color: #BA1A1A;
+}
+/* Fim do codigo da notificacao */
+
+
+/* Comeco do codigo responsivo */
+@media (max-width: 480px) {
+  .area-login {
+    align-items: flex-start;
+    padding-top: 24px;
+  }
+
+  .logo-login {
+    width: 205px;
+  }
+
+  .card-login {
+    padding: 20px;
+  }
+}
+/* Fim do codigo responsivo */
